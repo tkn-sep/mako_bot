@@ -58,9 +58,11 @@ module.exports = (robot) ->
 [R][ map (場所) ]\n
      : (場所)の地図を表示します。\n
 [R][ wreport ]\n
-     : 指定の文字列で画像検索をします。\n
+     : 週報の提出状況を表示します。\n
 [R][ mreport ]\n
-     : 指定の文字列で画像検索をします。\n\n
+     : 月報の提出状況を表示します。\n
+[R][ start pomodoro (分) ]\n
+     : 指定時間の経過を教えてくれます。\n\n
      
 Source : https://github.com/tkn-sep/mako_bot
 \n
