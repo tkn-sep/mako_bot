@@ -1,0 +1,82 @@
+
+
+h2. node.js環境の構築
+
+* 以下のＵＲＬからNodistSetup-vx.x.x.exeをダウンロードする
+** https://github.com/marcelklehr/nodist/releases
+
+* exeファイルを実行しインストールする
+
+* Windows powerShellsを管理者権限で起動する
+
+* 以下のコマンドで実行権限を確認する
+<pre>
+Get-ExecutionPolicy
+</pre>
+** "Restricted"となっていたら"Unrestricted"に変更する
+<pre>
+Set-ExecutionPolicy Unrestricted
+</pre>
+
+* nodistのバージョンを確認する
+<pre>
+nodist -v
+</pre>
+** インストールしたexeと同一のバージョンであればＯＫ
+
+* node.jsのLTSを確認
+** 以下のURLからLTSのバージョンを確認する
+** https://nodejs.org/ja/
+
+* node.jsのインストール
+<pre>
+nodist + 8.12.0
+</pre>
+
+* 使用するnode.jsのバージョンを指定
+<pre>
+nodist 8.12.0
+</pre>
+
+
+* node.jsが正しく認識されているか確認する
+<pre>
+node -v
+</pre>
+
+h2. hubotの導入
+
+* 以下のコマンドでhubotを導入する
+<pre>
+npm install -g hubot coffee-script yo generator-hubot
+</pre>
+
+h2. botの初期作成
+
+* githubにリポジトリを作成
+** 任意の場所にディレクトリを作成
+** 上記のディレクトリにsourcetreeから新規リポジトリを作成
+
+* 上記のディレクトリに移動
+<pre>
+cd xxxx
+</pre>
+* hubotの構築
+<pre>
+yo hubot
+</pre>
+** 構築時の入力は以下
+<pre>
+? Owner Enter
+? Bot name mako
+? Description Enter
+? Bot adapter slack
+</pre>
+** Procfileをテキストエディタで開いて以下のように修正
+<pre>
+web: bin/hubot -a slack -n mako
+</pre>
+
+
+.\bin\hubot --adapter slack
+
