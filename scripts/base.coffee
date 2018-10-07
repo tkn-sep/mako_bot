@@ -58,5 +58,8 @@ module.exports = (robot) ->
 [R][ wreport ]\n
      : 指定の文字列で画像検索をします。\n
 [R][ mreport ]\n
-     : 指定の文字列で画像検索をします。\n
+     : 指定の文字列で画像検索をします。\n\n
+     
+Source : https://github.com/tkn-sep/mako_bot
+\n
     '
