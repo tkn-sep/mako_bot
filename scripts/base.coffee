@@ -63,6 +63,8 @@ module.exports = (robot) ->
      : 月報の提出状況を表示します。\n
 [R][ start pomodoro (分) ]\n
      : 指定時間の経過を教えてくれます。\n\n
+[R][ グループ ]\n
+     : カンマ区切りの文字列を指定の個数毎にグループ分けしてくれます。\n\n
      
 Source : https://github.com/tkn-sep/mako_bot
 \n
