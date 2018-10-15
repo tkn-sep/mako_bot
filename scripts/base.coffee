@@ -34,6 +34,17 @@ module.exports = (robot) ->
     item  = msg.random items
     msg.reply "#{item}"
     
+  # Commands: hubot 21
+  robot.respond /オリパラ/i, (msg) ->
+    d = new Date
+    d1 = new Date "2020-07-24 09:00:00 +0900"
+    d2 = new Date "2020-08-25 09:00:00 +0900"
+    
+    diffOri = datediff d1, d
+    diffPara = datediff d2, d
+    
+    msg.send "オリンピックまで、あと#{diffOri}！\nパラリンピックまで、あと#{diffPara}！"
+    
   # Commands: hubot ヘルプ
   robot.respond /ヘルプ/i, (msg) ->
     msg.reply '\n
@@ -62,10 +73,24 @@ module.exports = (robot) ->
 [R][ mreport ]\n
      : 月報の提出状況を表示します。\n
 [R][ start pomodoro (分) ]\n
-     : 指定時間の経過を教えてくれます。\n\n
+     : 指定時間の経過を教えてくれます。\n
+[R][ オリパラ ]\n
+     : オリンピックまでの残り日数を教えてくれます。\n
+[R][ 修造 ]\n
+     : 修造のお言葉。\n
 [R][ グループ ]\n
      : カンマ区切りの文字列を指定の個数毎にグループ分けしてくれます。\n\n
      
 Source : https://github.com/tkn-sep/mako_bot
 \n
     '
+  
+# 日付の差分を取得する関数
+datediff = (d1, d) ->
+  diff = d1.getTime() - d.getTime()
+  days = parseInt(diff/(24*60*60*1000), 10)
+  diff -= days * 24 * 60 * 60 * 1000
+  hours = parseInt(diff/(60*60*1000), 10)
+  diff -= hours * 60 * 60 * 1000
+  minutes = parseInt(diff/(60*1000), 10)
+  return "#{days}日#{hours}時間#{minutes}分"
