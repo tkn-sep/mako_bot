@@ -81,7 +81,6 @@ module.exports = (robot) ->
 [R][ グループ ]\n
      : カンマ区切りの文字列を指定の個数毎にグループ分けしてくれます。\n\n
      
-Source : https://github.com/tkn-sep/mako_bot
 \n
     '
   
