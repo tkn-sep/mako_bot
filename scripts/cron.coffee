@@ -10,7 +10,7 @@ module.exports = (robot) ->
 
   # Crontabの設定方法と基本一緒 *(sec) *(min) *(hour) *(day) *(month) *(day of the week)
   # #nacと言う部屋に、平日の17:30時に実行
-  new cronJob('0 10 16 * * 1-5', () ->
+  new cronJob('0 15 16 * * 1-5', () ->
     # ↑のほうで宣言しているsendメソッドを実行する
     send '#nac', "テスト！！"
   ).start()
