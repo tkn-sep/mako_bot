@@ -17,6 +17,6 @@ module.exports = (robot) ->
   ).start()
 
   # #nacと言う部屋に、平日の16:00時に実行
-  new cronJob('0 35 16 * * 1-5', () ->
+  new cronJob('0 51 8 * * 1-5', () ->
     send '#nac', "#{ ary[Math.floor( Math.random() * 6 )] }"
   ).start()
