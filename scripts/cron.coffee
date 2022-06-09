@@ -20,3 +20,8 @@ module.exports = (robot) ->
   new cronJob('0 51 8 * * 1-5', () ->
     send '#nac', "#{ ary[Math.floor( Math.random() * 6 )] }"
   ).start()
+
+  # #leadersと言う部屋に、25日の10:00時に実行
+  new cronJob('0 0 10 25 * *', () ->
+    send '#leaders', "25日は月末までの勤怠を埋める日"
+  ).start()
